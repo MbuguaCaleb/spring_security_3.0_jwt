@@ -50,6 +50,7 @@ public class User implements UserDetails {
     }
 
     //I will use my username as the email
+    //this sets my claim
     @Override
     public String getUsername() {
         return email;
