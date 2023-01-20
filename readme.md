@@ -1,3 +1,15 @@
+**Spring JWT**
+
+```aidl
+
+(a)We create a JWT Filter, Then inform Our Spring Security Configuration,To use the Created Filter.
+
+(b) At application start up Spring will try to look for a Bean of Type SecurityFilterChain
+The security filter chain bean is responsible for configuring all the security for our application.
+
+
+```
+
 **Important Docker Commands**
 
 ```aidl

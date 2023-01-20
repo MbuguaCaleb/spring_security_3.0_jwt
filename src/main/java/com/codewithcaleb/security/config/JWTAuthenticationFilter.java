@@ -56,6 +56,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
             UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
 
             //validate the token
+            //i fiest authenitcate everything then call the Username password authentication filter
             if(jwtService.isTokenValid(jwt,userDetails)){
                 //update the security-context and forward the request to dispatcher servlet
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
