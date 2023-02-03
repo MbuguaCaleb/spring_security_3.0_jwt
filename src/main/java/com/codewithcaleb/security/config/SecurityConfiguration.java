@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    private final Filter jwtAuthFilter;
+    private final JWTAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
 
@@ -37,7 +37,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("")//all URL(s) Here will be permitted
+                .requestMatchers("/api/v1/auth/**")//all URL(s) Here will be permitted
                 .permitAll()
                 .anyRequest()//any other request must be authenticated
                 .authenticated()
